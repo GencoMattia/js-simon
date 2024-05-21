@@ -2,7 +2,9 @@ const generateButton = document.querySelector("#generate-numbers");
 
 generateButton.addEventListener("click", function(){
     const numbersContainerEl = document.querySelector(".number-container");
+    const resultsContainerEl = document.querySelector(".results");
     numbersContainerEl.innerHTML = "";
+    resultsContainerEl.innerHTML = "";
     const randomNumberArray = [];
 
     for(let i = 0; i < 5; i++){
@@ -19,13 +21,18 @@ generateButton.addEventListener("click", function(){
 
     setTimeout(function() {
         for(let i = 0; i < randomNumberArray.length; i++){
+            const resultEl = document.createElement("p");
             const userGuessedNumber = Number.parseInt(prompt("Che numero ricordi?"), 10);
             let isUserGuess = false;
     
             if(randomNumberArray.includes(userGuessedNumber)){
                 isUserGuess = true;
+                resultsContainerEl.appendChild(resultEl);
+                resultEl.append(`Complimenti! Ti sei ricordato il numero ${userGuessedNumber}.`)
                 console.log(`Complimenti! Ti sei ricordato il numero ${userGuessedNumber}.`);
             } else {
+                resultsContainerEl.appendChild(resultEl);
+                resultEl.append(`Mi spiace, ${userGuessedNumber} non è presente nella lista.`)
                 console.log(`Mi spiace, ${userGuessedNumber} non è presente nella lista.`);
             }
         };
