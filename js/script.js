@@ -1,9 +1,11 @@
 const generateButton = document.querySelector("#generate-numbers");
 
 generateButton.addEventListener("click", function(){
+    const numbersContainer = document.querySelector(".number-container")
     const randomNumberArray = [];
 
     for(let i = 0; i < 5; i++){
+    
         randomNumberArray.push(getUniqueRandomNumber(randomNumberArray, 1, 20));
     }
 
