@@ -1,7 +1,8 @@
 const generateButton = document.querySelector("#generate-numbers");
 
 generateButton.addEventListener("click", function(){
-    const numbersContainerEl = document.querySelector(".number-container")
+    const numbersContainerEl = document.querySelector(".number-container");
+    numbersContainerEl.innerHTML = "";
     const randomNumberArray = [];
 
     for(let i = 0; i < 5; i++){
