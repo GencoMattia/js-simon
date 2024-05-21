@@ -17,17 +17,19 @@ generateButton.addEventListener("click", function(){
         }, 30000);
     };
 
-    for(let i = 0; i < randomNumberArray.length; i++){
-        const userGuessedNumber = Number.parseInt(prompt("Che numero ricordi?"), 10);
-        let isUserGuess = false;
-
-        if(randomNumberArray.includes(userGuessedNumber)){
-            isUserGuess = true;
-            console.log(`Complimenti! Ti sei ricordato il numero ${userGuessedNumber}.`)
-        } else {
-            console.log(`Mi spiace, ${userGuessedNumber} non è presente nella lista.`)
-        }
-    };
+    setTimeout(function() {
+        for(let i = 0; i < randomNumberArray.length; i++){
+            const userGuessedNumber = Number.parseInt(prompt("Che numero ricordi?"), 10);
+            let isUserGuess = false;
+    
+            if(randomNumberArray.includes(userGuessedNumber)){
+                isUserGuess = true;
+                console.log(`Complimenti! Ti sei ricordato il numero ${userGuessedNumber}.`);
+            } else {
+                console.log(`Mi spiace, ${userGuessedNumber} non è presente nella lista.`);
+            }
+        };
+    }, 31000);
 
     console.log(randomNumberArray);
 });
