@@ -11,7 +11,11 @@ generateButton.addEventListener("click", function(){
         numberCellEl.appendChild(numberEl);
         randomNumberArray.push(getUniqueRandomNumber(randomNumberArray, 1, 20));
         numberEl.append(randomNumberArray[i]);
+        setTimeout(function() {
+            numberEl.classList.add("display-none");
+        }, 30000);
     }
+
 
     console.log(randomNumberArray);
 });
